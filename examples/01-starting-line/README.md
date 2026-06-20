@@ -2,9 +2,10 @@
 
 The smallest real thing: an agent that reads the internet and tells you what matters.
 
-These are *the fifteen ugly lines* from the post — the seed of an agent I now run at 8am
-every day. They're deliberately tiny. The point isn't the code; it's that you run it,
-change it, and feel the difference between *consuming* AI content and *building* with it.
+This is the cleaned-up version of *the fifteen ugly lines* from the post — the seed of an
+agent I now run at 8am every day. It's deliberately tiny. The point isn't the code; it's
+that you run it, change it, and feel the difference between *consuming* AI content and
+*building* with it.
 
 ## Run it
 
@@ -32,3 +33,13 @@ You should get back a short, opinionated digest of today's headlines — filtere
 3. The leap from "tutorial" to "mine" happens the moment you change a line and re-run.
 
 A full run costs a fraction of a cent. Run it ten times while you tinker.
+
+## Troubleshooting
+
+- **`Set ANTHROPIC_API_KEY first ...`** — you haven't set the key in *this* terminal.
+  Run the `export` line again (it doesn't persist across new windows).
+- **`No items from <url> ...`** — that feed is down or its URL changed. The script skips it
+  and keeps going; if *every* feed fails it stops and tells you. The two default feeds
+  (Hacker News, Simon Willison) were confirmed working when this shipped.
+- **`ModuleNotFoundError`** — your virtual env isn't active, or deps aren't installed.
+  Re-run the two setup lines above.

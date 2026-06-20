@@ -4,9 +4,12 @@ I went from not knowing what a token was to building autonomous AI systems that 
 unattended. This repo is the companion to a LinkedIn series where I document the climb —
 and hand you the actual, runnable code at each step.
 
-**This is hands-on, not theory.** Every module ships a small, self-contained example you
-can clone, run, and break. You learn AI by building, not by nodding along. If you want dry
-concepts from a podium, this will disappoint you — that's the point.
+**This is hands-on, not theory.** Each module ships a small, self-contained example as it
+publishes — clone it, run it, break it. You learn AI by building, not by nodding along. If
+you want dry concepts from a podium, this will disappoint you — that's the point.
+
+> **Status:** the series is publishing live, twice a week. Module 1's code is here now;
+> 2–6 land with their posts (see the table below). Star/watch the repo to get each drop.
 
 I'm not selling anything. If one person gets unstuck because of this, it was worth it.
 
