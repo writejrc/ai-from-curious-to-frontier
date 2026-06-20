@@ -9,9 +9,9 @@ change it, and feel the difference between *consuming* AI content and *building*
 ## Run it
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-export ANTHROPIC_API_KEY="sk-ant-..."     # your key; never commit it
+uv venv && source .venv/bin/activate          # or: python -m venv .venv && source .venv/bin/activate
+uv pip install -r requirements.txt            # or: pip install -r requirements.txt
+export ANTHROPIC_API_KEY="sk-ant-..."         # your key; never commit it
 python digest.py
 ```
 

@@ -27,17 +27,23 @@ I'm not selling anything. If one person gets unstuck because of this, it was wor
 | 5 | Delegate, Then Verify | Run the human–agent loop | _coming_ |
 | 6 | Staying at the Frontier | Build a compounding learning system | _coming_ |
 
-## Prerequisites
+## Prerequisites — the AI-builder's starter bench
 
-You do **not** need to be a developer. You need:
+You do **not** need to be a developer. You need a small set of basic, mostly-free tools.
+This isn't a random shopping list — it's the standard bench for working with AI the right
+way, and you'll reuse it for everything in this series and beyond. Everything here is free
+except the API key, which costs pennies.
 
-- **A terminal** — Terminal on macOS/Linux, or PowerShell/WSL on Windows. Opening it is the bar.
-- **Python 3.10+** — check with `python3 --version`. ([python.org/downloads](https://www.python.org/downloads/) if you don't have it.)
-- **Git** — to clone the repo. (Or just download it as a ZIP from the green "Code" button.)
-- **An Anthropic API key** — the examples call Claude. Create one at
-  [console.anthropic.com](https://console.anthropic.com/). It's paid, but a full run of an
-  example costs a fraction of a cent.
-- **Ten minutes and a willingness to break things.** That's the real prerequisite.
+| Tool | Cost | Why it's on the bench (the best practice) |
+|------|------|-------------------------------------------|
+| **A terminal** — Terminal (macOS/Linux) or PowerShell/WSL (Windows) | Free, built in | Real work happens here. Opening it is the bar. |
+| **A code editor** — [VS Code](https://code.visualstudio.com/), or an AI-native one like [Cursor](https://cursor.com/) | Free / free tier | Where you read and change code. AI-native editors let you pair with a model as you go. |
+| **Git** + a free [GitHub account](https://github.com/signup) | Free | Version control is your undo button — and how you learn in public. (No git? Download this repo as a ZIP from the green **Code** button.) |
+| **Python 3.10+** with [uv](https://docs.astral.sh/uv/) | Free | `python3 --version` to check; [install Python](https://www.python.org/downloads/). `uv` keeps each project's packages isolated — a best practice from day one, and far faster than pip. |
+| **An AI coding assistant** — [Claude Code](https://www.claude.com/product/claude-code), or the AI built into your editor | Free tier / paid | The "work with the machine" muscle. You'll lean on this more every module. |
+| **An Anthropic API key** — from [console.anthropic.com](https://console.anthropic.com/) | Paid — pennies | The examples call Claude. A full run costs a fraction of a cent. |
+
+The only true prerequisite money can't buy: **ten minutes and a willingness to break things.**
 
 ## Setup (once)
 
@@ -45,7 +51,16 @@ You do **not** need to be a developer. You need:
 export ANTHROPIC_API_KEY="sk-ant-..."   # never commit this
 ```
 
-Each example has its own `requirements.txt`. Use a fresh virtual env per example.
+Each example has its own `requirements.txt`. With `uv` you can spin up an isolated env per
+example in seconds:
+
+```bash
+cd examples/01-starting-line
+uv venv && source .venv/bin/activate
+uv pip install -r requirements.txt
+```
+
+(Plain `python -m venv .venv && pip install -r requirements.txt` works too.)
 
 ## A note on cost
 
