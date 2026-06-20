@@ -27,9 +27,19 @@ I'm not selling anything. If one person gets unstuck because of this, it was wor
 | 5 | Delegate, Then Verify | Run the human–agent loop | _coming_ |
 | 6 | Staying at the Frontier | Build a compounding learning system | _coming_ |
 
-## Setup (once)
+## Prerequisites
 
-You'll need Python 3.10+ and an Anthropic API key.
+You do **not** need to be a developer. You need:
+
+- **A terminal** — Terminal on macOS/Linux, or PowerShell/WSL on Windows. Opening it is the bar.
+- **Python 3.10+** — check with `python3 --version`. ([python.org/downloads](https://www.python.org/downloads/) if you don't have it.)
+- **Git** — to clone the repo. (Or just download it as a ZIP from the green "Code" button.)
+- **An Anthropic API key** — the examples call Claude. Create one at
+  [console.anthropic.com](https://console.anthropic.com/). It's paid, but a full run of an
+  example costs a fraction of a cent.
+- **Ten minutes and a willingness to break things.** That's the real prerequisite.
+
+## Setup (once)
 
 ```bash
 export ANTHROPIC_API_KEY="sk-ant-..."   # never commit this
