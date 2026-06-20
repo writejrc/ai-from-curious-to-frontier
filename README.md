@@ -8,8 +8,8 @@ wrote at each step is here, yours to take.
 from my climb, posted as I go. Clone it, run it, break it; that's how it stuck for me. If
 you want dry concepts from a podium, this will disappoint you — that's the point.
 
-> **Status:** I'm posting this live, twice a week. Chapter 1's code is here now; 2–6 land
-> with their posts (see the table below). Star/watch the repo to catch each drop.
+> **Status:** I'm posting this live as I climb — no fixed schedule, no finish line. The
+> code fills in here episode by episode (Chapter 1 is in). Star/watch to catch each drop.
 
 I'm not selling anything. It's just my path, written down. If you see yourself in it, maybe
 it becomes yours too.
@@ -20,16 +20,18 @@ it becomes yours too.
 2. `cd examples/NN-<name>/`, read its README, run it, then change it.
 3. Break it on purpose. Fix it. That's how it stuck for me.
 
-## The climb
+## The climb (open-ended)
 
-| # | Chapter | What it's about | Code |
-|---|---------|-----------------|------|
-| 1 | The Starting Line | Being honest about where I was; shipping the smallest real thing | [`examples/01-starting-line/`](examples/01-starting-line/) |
-| 2 | Escape Velocity | Getting out of tutorial hell by shipping | _coming_ |
-| 3 | Don't Learn the Tool, Scout It | Discovering + composing what already exists | _coming_ |
-| 4 | Where I Almost Quit | The gap between a demo and a system that survives | _coming_ |
-| 5 | Delegate, Then Verify | The human–agent loop | _coming_ |
-| 6 | Staying In It | A learning habit that compounds | _coming_ |
+Roughly the shape of it. No fixed length — each part is the wall the last one ran into, and
+the code lands here as I get to it. Starts here:
+
+1. **Making it do one real thing** — [`examples/01-starting-line/`](examples/01-starting-line/) is the first build
+2. **Stop reinventing** — using what already exists instead of building from scratch
+3. **Demo → something that survives** — reliability, when "seems fine" isn't enough
+4. **Letting it run on its own** — agents, and learning to trust them
+5. **Cost, secrets, shipping** — the unglamorous stuff that makes it real
+6. **Building with AI** — not just building it
+7. **Staying in it** — and onward, because the ground keeps shifting
 
 ## Prerequisites — the AI-builder's starter bench
 
