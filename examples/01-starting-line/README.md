@@ -1,11 +1,11 @@
-# Module 1 — The Starting Line
+# Chapter 1 — The Starting Line
 
-The smallest real thing: an agent that reads the internet and tells you what matters.
+The smallest real thing I built: an agent that reads the internet and tells me what matters.
 
 This is the cleaned-up version of *the fifteen ugly lines* from the post — the seed of an
-agent I now run at 8am every day. It's deliberately tiny. The point isn't the code; it's
-that you run it, change it, and feel the difference between *consuming* AI content and
-*building* with it.
+agent I now run at 8am every day. It's deliberately tiny. The code was never the point; the
+point was that I ran it, changed it, and felt the difference between *consuming* AI content
+and *building* with it. If you want to feel that too, it's yours.
 
 ## Run it
 
@@ -26,11 +26,11 @@ You should get back a short, opinionated digest of today's headlines — filtere
 - Make the prompt meaner: "be ruthless, keep at most 3."
 - Print it to a file instead of the screen. Congratulations — that's 80% of a real cron job.
 
-## What this is teaching
+## What this taught me
 
 1. An LLM call is just a function: text in, text out. No magic.
-2. Routine work uses a cheap, fast model on purpose (`claude-haiku-4-5`) — see Module 4.
-3. The leap from "tutorial" to "mine" happens the moment you change a line and re-run.
+2. Routine work runs fine on a cheap, fast model on purpose (`claude-haiku-4-5`) — more in Chapter 4.
+3. It stopped being a tutorial and started being *mine* the moment I changed a line and re-ran it.
 
 A full run costs a fraction of a cent. Run it ten times while you tinker.
 
