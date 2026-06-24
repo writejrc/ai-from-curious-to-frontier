@@ -47,14 +47,14 @@ except the API key, which costs pennies.
 | **Git** + a free [GitHub account](https://github.com/signup) | Free | Version control is your undo button — and how you learn in public. (No git? Download this repo as a ZIP from the green **Code** button.) |
 | **Python 3.10+** with [uv](https://docs.astral.sh/uv/) | Free | `python3 --version` to check; [install Python](https://www.python.org/downloads/). `uv` keeps each project's packages isolated — a best practice from day one, and far faster than pip. |
 | **An AI coding assistant** — [Claude Code](https://www.claude.com/product/claude-code), or the AI built into your editor | Free tier / paid | The "work with the machine" muscle. You'll lean on this more every module. |
-| **An Anthropic API key** — from [console.anthropic.com](https://console.anthropic.com/) | Paid — pennies | The examples call Claude. A full run costs a fraction of a cent. |
+| **An API key** — I use [OpenRouter](https://openrouter.ai/keys) (one key, any model) | Paid — pennies | The examples call a model through OpenRouter. A full run costs a fraction of a cent. |
 
 The only true prerequisite money can't buy: **ten minutes and a willingness to break things.**
 
 ## Setup (once)
 
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-..."   # never commit this
+export OPENROUTER_API_KEY="sk-or-..."   # never commit this
 ```
 
 Each example has its own `requirements.txt`. With `uv` you can spin up an isolated env per
@@ -70,9 +70,10 @@ uv pip install -r requirements.txt
 
 ## A note on cost
 
-These examples use **Claude Haiku 4.5** (`claude-haiku-4-5`) — Anthropic's fastest, cheapest
-model — because routine work doesn't need the biggest model. A full run of the Chapter 1
-example costs a fraction of a cent. (Chapter 4 is entirely about this choice.)
+These examples call a **cheap, fast model through OpenRouter** (one key, any model — the
+`MODEL` line at the top of each script; default `google/gemini-2.0-flash-lite-001`). Routine
+work doesn't need the biggest model. A full run costs a fraction of a cent, and you can swap
+the model in one line. (Chapter 4 is entirely about this choice.)
 
 ## License
 

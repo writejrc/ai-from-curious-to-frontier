@@ -12,7 +12,7 @@ and *building* with it. If you want to feel that too, it's yours.
 ```bash
 uv venv && source .venv/bin/activate          # or: python -m venv .venv && source .venv/bin/activate
 uv pip install -r requirements.txt            # or: pip install -r requirements.txt
-export ANTHROPIC_API_KEY="sk-ant-..."         # your key; never commit it
+export OPENROUTER_API_KEY="sk-or-..."         # your key; never commit it
 python digest.py
 ```
 
@@ -29,14 +29,14 @@ You should get back a short, opinionated digest of today's headlines — filtere
 ## What this taught me
 
 1. An LLM call is just a function: text in, text out. No magic.
-2. Routine work runs fine on a cheap, fast model on purpose (`claude-haiku-4-5`) — more in Chapter 4.
+2. Routine work runs fine on a cheap, fast model on purpose (a cheap one on OpenRouter) — more in Chapter 4.
 3. It stopped being a tutorial and started being *mine* the moment I changed a line and re-ran it.
 
 A full run costs a fraction of a cent. Run it ten times while you tinker.
 
 ## Troubleshooting
 
-- **`Set ANTHROPIC_API_KEY first ...`** — you haven't set the key in *this* terminal.
+- **`Set OPENROUTER_API_KEY first ...`** — you haven't set the key in *this* terminal.
   Run the `export` line again (it doesn't persist across new windows).
 - **`No items from <url> ...`** — that feed is down or its URL changed. The script skips it
   and keeps going; if *every* feed fails it stops and tells you. The two default feeds

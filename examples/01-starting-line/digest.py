@@ -1,28 +1,32 @@
 """A tiny first build: an AI agent that reads the internet and tells you what matters.
 
 This is the cleaned-up version of the "fifteen ugly lines" from the post — same idea,
-just readable. It pulls a couple of feeds, asks Claude which items are worth your time,
+just readable. It pulls a couple of feeds, asks a model which items are worth your time,
 and prints a digest. Clone it, run it, break it, make it yours.
 
-    export ANTHROPIC_API_KEY=sk-ant-...
+Uses OpenRouter (one key, any model). It's OpenAI-compatible, so we use the `openai` SDK
+pointed at OpenRouter.
+
+    export OPENROUTER_API_KEY=sk-or-...
     python digest.py
 """
 
 import os
 import sys
 import feedparser
-import anthropic
+from openai import OpenAI
 
-# --- Make it yours: edit these two lines. ---
+# --- Make it yours: edit these. ---
 FEEDS = [
     "https://hnrss.org/frontpage",                 # Hacker News front page
     "https://simonwillison.net/atom/everything/",  # Simon Willison — practical AI/engineering
 ]
 WHAT_I_CARE_ABOUT = "practical AI engineering, agents that run in production, and shipping"
+MODEL = "google/gemini-2.0-flash-lite-001"  # cheap + fast on OpenRouter; swap any model from openrouter.ai/models
 
 # The #1 first-run failure is a missing key. Fail with a human message, not a traceback.
-if not os.getenv("ANTHROPIC_API_KEY"):
-    sys.exit("Set ANTHROPIC_API_KEY first (see the README). Nothing was sent.")
+if not os.getenv("OPENROUTER_API_KEY"):
+    sys.exit("Set OPENROUTER_API_KEY first (see the README). Nothing was sent.")
 
 # 1. Grab the latest headlines from each feed (a handful each — keep it cheap).
 items = []
@@ -39,9 +43,9 @@ if not items:
 headlines = "\n".join(items)
 
 # 2. Ask the cheapest model that does the job: "which of these matter to me?"
-client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from the environment
-response = client.messages.create(
-    model="claude-haiku-4-5",    # fast + cheap — routine triage doesn't need the biggest model
+client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=os.environ["OPENROUTER_API_KEY"])
+response = client.chat.completions.create(
+    model=MODEL,
     max_tokens=1024,
     messages=[{
         "role": "user",
@@ -55,4 +59,4 @@ response = client.messages.create(
 )
 
 # 3. Print the digest. (The real version writes it to a file and notifies me at 8am.)
-print(next(block.text for block in response.content if block.type == "text"))
+print(response.choices[0].message.content)

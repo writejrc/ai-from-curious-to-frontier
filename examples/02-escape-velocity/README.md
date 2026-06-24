@@ -12,7 +12,7 @@ command, and I use it constantly. That's the whole point — a tiny thing you *k
 ```bash
 uv venv && source .venv/bin/activate          # or: python -m venv .venv && source .venv/bin/activate
 uv pip install -r requirements.txt            # or: pip install -r requirements.txt
-export ANTHROPIC_API_KEY="sk-ant-..."         # your key; never commit it
+export OPENROUTER_API_KEY="sk-or-..."         # your key; never commit it
 python explain.py "TypeError: 'NoneType' object is not subscriptable"
 ```
 
@@ -40,7 +40,7 @@ Don't just run mine. **Ship your own.** It takes one sitting:
 - `commit.py` — pipe `git diff`, get a commit message.
 
 ## Troubleshooting
-- **`Set ANTHROPIC_API_KEY first ...`** — set the key in this terminal (it doesn't persist
+- **`Set OPENROUTER_API_KEY first ...`** — set the key in this terminal (it doesn't persist
   across new windows).
 - **`ModuleNotFoundError`** — virtual env isn't active, or deps aren't installed; re-run the
   two setup lines.
