@@ -19,6 +19,23 @@ python digest.py
 You should get back a short, opinionated digest of today's headlines — filtered to what
 *you* said you care about.
 
+**What it actually printed** (real run, OpenRouter + `gemini-2.5-flash-lite`, trimmed):
+
+```
+Here are the headlines genuinely worth your time, given your focus on practical AI
+engineering, production agents, and shipping:
+
+• Prompt Injection as Role Confusion — essential for building agents that can't be
+  easily manipulated in production.
+• Temporary Cloudflare Accounts for AI agents — a way to control access and mitigate
+  abuse for agents running in production.
+• sqlite-utils 4.0rc1 adds migrations — robust data management for production AI systems.
+  ...
+```
+
+Verified end-to-end (real feeds → real model call → digest). Yours will differ — it reads
+*today's* feeds and filters to *your* `WHAT_I_CARE_ABOUT`.
+
 ## Now break it (this is the assignment)
 
 - Change `WHAT_I_CARE_ABOUT` to your actual interests. Re-run. Watch the digest change.

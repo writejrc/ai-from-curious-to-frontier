@@ -22,7 +22,7 @@ FEEDS = [
     "https://simonwillison.net/atom/everything/",  # Simon Willison — practical AI/engineering
 ]
 WHAT_I_CARE_ABOUT = "practical AI engineering, agents that run in production, and shipping"
-MODEL = "google/gemini-2.0-flash-lite-001"  # cheap + fast on OpenRouter; swap any model from openrouter.ai/models
+MODEL = os.getenv("DIARY_MODEL", "google/gemini-2.5-flash-lite")  # cheap + fast (verified); override w/ DIARY_MODEL or swap here
 
 # The #1 first-run failure is a missing key. Fail with a human message, not a traceback.
 if not os.getenv("OPENROUTER_API_KEY"):

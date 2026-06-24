@@ -71,9 +71,13 @@ uv pip install -r requirements.txt
 ## A note on cost
 
 These examples call a **cheap, fast model through OpenRouter** (one key, any model — the
-`MODEL` line at the top of each script; default `google/gemini-2.0-flash-lite-001`). Routine
-work doesn't need the biggest model. A full run costs a fraction of a cent, and you can swap
-the model in one line. (Chapter 4 is entirely about this choice.)
+`MODEL` line at the top of each script, or the `DIARY_MODEL` env var; default
+`google/gemini-2.5-flash-lite`). Routine work doesn't need the biggest model. A full run
+costs a fraction of a cent, and you can swap the model in one line. (Chapter 4 is about this.)
+
+> Model ids get retired — `google/gemini-2.0-flash-lite-001` 404'd mid-build, so the default
+> moved to `gemini-2.5-flash-lite`. If yours 404s, browse [openrouter.ai/models](https://openrouter.ai/models)
+> and set `DIARY_MODEL=...`.
 
 ## License
 
